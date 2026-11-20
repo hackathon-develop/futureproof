@@ -1,0 +1,22 @@
+# Estimated USD per 1M tokens. Matched by substring of the model id (longest match wins).
+# Rough estimates for the demo - adjust to your actual provider prices.
+gpt-4o-mini: {input: 0.15, output: 0.60}
+gpt-4o: {input: 2.50, output: 10.00}
+gpt-4.1-mini: {input: 0.40, output: 1.60}
+gpt-4.1: {input: 2.00, output: 8.00}
+gpt-5-mini: {input: 0.25, output: 2.00}
+gpt-5: {input: 1.25, output: 10.00}
+haiku: {input: 1.00, output: 5.00}
+sonnet: {input: 3.00, output: 15.00}
+opus: {input: 5.00, output: 25.00}
+mistral-small: {input: 0.10, output: 0.30}
+mistral-large: {input: 2.00, output: 6.00}
+gemini-2.5-flash: {input: 0.30, output: 2.50}
+gemini-2.5-pro: {input: 1.25, output: 10.00}
+# rough guesses for models used in the demo (verify against otari pricing)
+deepseek-v4-pro: {input: 0.60, output: 2.40}
+deepseek-v4: {input: 0.30, output: 1.20}
+gemini-3.5-flash: {input: 0.30, output: 2.50}
+gemini-3.1-pro: {input: 2.00, output: 12.00}
+kimi-k3: {input: 0.60, output: 2.50}
+grok-4.7: {input: 3.00, output: 15.00}
