@@ -1,0 +1,192 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;600&display=swap">
+<style>:root {
+  --ink: #14213D;
+  --ink-2: #1E2D4F;
+  --ink-line: #3A4A6B;
+  --paper: #F6F3EC;
+  --paper-2: #ECE7DC;
+  --card: #FBFAF6;
+  --line: #D9D3C5;
+  --blue: #2A62C4;
+  --blue-soft: #8FB3F0;
+  --orange: #E8914A;
+  --orange-deep: #8A420F;
+  --orange-tint: #F7DCC5;
+  --body-dark: #4A5568;
+  --body-light: #BFCBE0;
+}
+
+body { font-family: 'Inter', Arial, sans-serif; }
+
+section {
+  padding: 128px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', Arial, sans-serif;
+}
+section.dark { background: var(--ink); color: var(--paper); }
+section.light { background: var(--paper); color: var(--ink); }
+section.light2 { background: var(--paper-2); color: var(--ink); }
+
+h1, h2, h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-weight: 600; }
+h2 { font-size: 64px; line-height: 1.1; margin: 0; }
+
+.eyebrow {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 24px; font-weight: 600; letter-spacing: 3px;
+  margin: 0 0 16px 0;
+}
+.light .eyebrow, .light2 .eyebrow { color: var(--blue); }
+.dark .eyebrow { color: var(--orange); }
+
+.body { font-size: 28px; line-height: 1.4; color: var(--body-dark); margin: 0; }
+
+/* entrance motion */
+.rise { animation: rise 500ms ease-out both; animation-delay: calc(var(--i) * 120ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- cover ---------- */
+.cover { justify-content: center; }
+.cover-title { font-size: 112px; line-height: 1.05; margin: 0 0 48px 0; color: var(--paper); }
+.lede { font-size: 36px; line-height: 1.35; color: var(--body-light); width: 1240px; margin: 0 0 48px 0; }
+.lede b { color: var(--paper); }
+.question { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 64px; font-weight: 600; line-height: 1.1; color: var(--orange); margin: 0 0 64px 0; }
+.chips { display: flex; gap: 16px; }
+.chip { font-size: 24px; color: var(--paper); border: 2px solid var(--ink-line); border-radius: 999px; padding: 10px 24px; margin: 0; }
+
+/* ---------- shared split ---------- */
+.split { display: flex; gap: 64px; margin-top: 48px; align-items: flex-start; }
+
+/* ---------- slide 2 ---------- */
+.stand-left { width: 680px; display: flex; flex-direction: column; gap: 32px; }
+.axes { display: flex; flex-direction: column; gap: 16px; }
+.axis { background: var(--card); border-left: 6px solid var(--blue); border-radius: 8px; padding: 14px 24px; }
+.axis .axis-name { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 32px; font-weight: 600; color: var(--ink); margin: 0 0 4px 0; }
+.axis .axis-desc { font-size: 24px; line-height: 1.3; color: var(--body-dark); margin: 0; }
+.stand-right { width: 920px; display: flex; flex-direction: column; gap: 24px; }
+.shot { background: #FFFFFF; border: 2px solid var(--line); border-radius: 12px; object-fit: contain; }
+.me { background: var(--ink); border-radius: 12px; padding: 24px 32px; }
+.me .me-label { font-size: 24px; font-weight: 600; color: var(--orange); margin: 0 0 6px 0; }
+.me .me-text { font-size: 28px; line-height: 1.4; color: var(--paper); margin: 0; }
+
+/* ---------- slide 3 ---------- */
+.explore-left { width: 1100px; display: flex; flex-direction: column; gap: 32px; }
+.paths { display: flex; flex-direction: column; gap: 16px; }
+.path { display: flex; justify-content: space-between; align-items: center; gap: 24px; background: var(--card); border-radius: 8px; padding: 16px 24px; border-left: 6px solid var(--line); }
+.path.hot { border-left: 6px solid var(--orange); }
+.path .path-name { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 32px; font-weight: 600; color: var(--ink); margin: 0 0 4px 0; }
+.path .path-model { font-size: 24px; color: var(--body-dark); margin: 0; }
+.path .boost { font-size: 24px; font-weight: 600; color: var(--orange-deep); background: var(--orange-tint); border-radius: 999px; padding: 8px 20px; margin: 0; white-space: nowrap; }
+.legend { font-size: 24px; color: var(--body-dark); margin: 0; }
+.legend .you { color: var(--blue); font-weight: 600; }
+.legend .path-c { color: var(--orange-deep); font-weight: 600; }
+
+/* ---------- slide 4 ---------- */
+.tree { position: relative; width: 1664px; height: 480px; margin-top: 40px; }
+.col-label { position: absolute; top: 0; font-size: 24px; font-weight: 600; color: var(--body-light); margin: 0; }
+.node { position: absolute; box-sizing: border-box; background: var(--ink-2); border: 2px solid var(--ink-line); border-radius: 10px; padding: 0 24px; display: flex; align-items: center; }
+.node p { font-size: 26px; color: var(--paper); margin: 0; }
+.node.root { background: var(--paper); border: 2px solid var(--paper); }
+.node.root p { color: var(--ink); font-weight: 600; }
+.node.pick { border: 3px solid var(--orange); }
+.node.pick p { font-weight: 600; }
+.node.next { border: 2px dashed var(--orange); background: var(--ink); }
+.node.next p { color: var(--body-light); }
+.node.dim p { color: var(--body-light); }
+.closer { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 56px; font-weight: 600; line-height: 1.15; color: var(--paper); margin: 40px 0 0 0; }
+.closer .hl { color: var(--orange); }
+.tree-lines { animation: fadein 600ms ease-out both; animation-delay: 300ms; }
+.grow { animation: fadein 500ms ease-out both; animation-delay: calc(var(--i) * 110ms); }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+html,body{margin:0;padding:0;background:#14213D}
+section{width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;position:relative;page-break-after:always;break-after:page}
+*{animation:none !important}
+@page{size:1920px 1080px;margin:0}
+</style></head><body><section id="cover" class="dark cover" data-transition="fade">
+<p class="eyebrow rise" style="--i:0">CAREER FUTURES EXPLORER</p>
+<h1 class="cover-title rise" style="--i:1">Knowledge used<br>to be power.</h1>
+<p class="lede rise" style="--i:2">AI just made knowledge cheap and everywhere. Power is moving to what is <b>scarce</b>, <b>can’t be copied</b>, and <b>needs someone to answer for it</b>.</p>
+<p class="question rise" style="--i:3">So where will <i>your</i> power come from now?</p>
+<div class="chips rise" style="--i:4">
+<p class="chip">Ownership</p>
+<p class="chip">Trust &amp; Relationships</p>
+<p class="chip">Responsibility</p>
+<p class="chip">Judgment &amp; Taste</p>
+</div>
+
+</section>
+
+<section id="stand" class="light" data-transition="fade">
+<p class="eyebrow">01 · KNOW WHERE YOU STAND</p>
+<h2>Rate your four axes of power</h2>
+<div class="split">
+<div class="stand-left">
+<p class="body rise" style="--i:0">A short chat records your question, role, skills, location and time horizon. Then you get a power profile with four axes, each scored out of 10.</p>
+<div class="axes">
+<div class="axis rise" style="--i:1"><p class="axis-name">Ownership</p><p class="axis-desc">What you own, vs. selling your time</p></div>
+<div class="axis rise" style="--i:2"><p class="axis-name">Trust &amp; Relationships</p><p class="axis-desc">A network nobody can copy</p></div>
+<div class="axis rise" style="--i:3"><p class="axis-name">Responsibility</p><p class="axis-desc">Signing off and being accountable, which AI can’t do</p></div>
+<div class="axis rise" style="--i:4"><p class="axis-name">Judgment &amp; Taste</p><p class="axis-desc">Knowing what matters, and saying no</p></div>
+</div>
+</div>
+<div class="stand-right">
+<img class="shot rise" style="--i:1; width:920px; height:460px" src="startpage.png" alt="Career Futures Explorer start page: intake chat in the middle, power profile radar with four axes on the right">
+<div class="me rise" style="--i:3">
+<p class="me-label">My scenario</p>
+<p class="me-text">IT teacher (Fachinformatiker training), Germany: “What should I excel in to stand out as AI changes the job market?”</p>
+</div>
+</div>
+</div>
+
+</section>
+
+<section id="explore" class="light2" data-transition="fade">
+<p class="eyebrow">02 · EXPLORE FUTURES</p>
+<h2>See how each path builds your power</h2>
+<div class="split">
+<div class="explore-left">
+<p class="body rise" style="--i:0">Live web research grounds every run. Then four different AI models each write a competing future, so you see more than one model’s view.</p>
+<div class="paths">
+<div class="path hot rise" style="--i:1"><div><p class="path-name">Personal Training IP Portfolio</p><p class="path-model">glm-5.3 · targets my weakest axis</p></div><p class="boost">Ownership ↑</p></div>
+<div class="path rise" style="--i:2"><div><p class="path-name">Internal AI Pedagogy Lead</p><p class="path-model">gemini-3.5-flash · high confidence</p></div><p class="boost">Responsibility ↑</p></div>
+<div class="path rise" style="--i:3"><div><p class="path-name">Niche Community for IT Trainers</p><p class="path-model">kimi-k3 · medium confidence</p></div><p class="boost">Trust + Ownership ↑</p></div>
+<div class="path rise" style="--i:4"><div><p class="path-name">Industry-Secondment Liaison Trainer</p><p class="path-model">grok-4.7 · medium confidence</p></div><p class="boost">Judgment ↑</p></div>
+</div>
+<p class="legend rise" style="--i:5">Each card shows <span class="you">your profile today</span> against <span class="path-c">the path’s profile</span>, plus the trend behind it.</p>
+</div>
+<img class="shot rise" style="--i:2; width:462px; height:682px" src="scenarios.png" alt="Two scenario cards, each with a model badge, confidence, a before/after power radar, a trend line and an Explore this path button">
+</div>
+
+</section>
+
+<section id="deeper" class="dark">
+<p class="eyebrow">03 · GO DEEPER</p>
+<h2>Pick one path and grow the tree</h2>
+<div class="tree">
+<svg class="tree-lines" aria-label="Tree: my question branches into four futures; the chosen IP Portfolio path branches again into a deeper round" style="position:absolute; left:0; top:0; width:1664px; height:480px" width="1664" height="480" viewBox="0 0 1664 480">
+<path d="M260 268 C320 268 320 212 380 212" fill="none" stroke="#3A4A6B" stroke-width="3"/>
+<path d="M260 268 C320 268 320 324 380 324" fill="none" stroke="#3A4A6B" stroke-width="3"/>
+<path d="M260 268 C320 268 320 436 380 436" fill="none" stroke="#3A4A6B" stroke-width="3"/>
+<path d="M260 268 C320 268 320 100 380 100" fill="none" stroke="#E8914A" stroke-width="4"/>
+<path d="M980 100 C1040 100 1040 92 1100 92" fill="none" stroke="#E8914A" stroke-width="4"/>
+<path d="M980 100 C1040 100 1040 180 1100 180" fill="none" stroke="#E8914A" stroke-width="4" stroke-dasharray="10 8"/>
+<path d="M980 100 C1040 100 1040 268 1100 268" fill="none" stroke="#E8914A" stroke-width="4" stroke-dasharray="10 8"/>
+</svg>
+<p class="col-label" style="left:0; width:260px">MY QUESTION</p>
+<p class="col-label" style="left:380px; width:600px">ROUND 1 · FOUR FUTURES</p>
+<p class="col-label" style="left:1100px; width:564px">EXPLORE THIS PATH →</p>
+<div class="node root grow" style="--i:0; left:0; top:224px; width:260px; height:88px"><p>IT teacher</p></div>
+<div class="node pick grow" style="--i:1; left:380px; top:56px; width:600px; height:88px"><p>Personal Training IP Portfolio</p></div>
+<div class="node dim grow" style="--i:2; left:380px; top:168px; width:600px; height:88px"><p>Internal AI Pedagogy Lead</p></div>
+<div class="node dim grow" style="--i:3; left:380px; top:280px; width:600px; height:88px"><p>Niche Community for IT Trainers</p></div>
+<div class="node dim grow" style="--i:4; left:380px; top:392px; width:600px; height:88px"><p>Industry-Secondment Liaison Trainer</p></div>
+<div class="node next grow" style="--i:5; left:1100px; top:56px; width:564px; height:72px"><p>2–4 follow-up questions on this path</p></div>
+<div class="node next grow" style="--i:6; left:1100px; top:144px; width:564px; height:72px"><p>New research for this niche</p></div>
+<div class="node next grow" style="--i:7; left:1100px; top:232px; width:564px; height:72px"><p>Futures one level deeper</p></div>
+</div>
+<p class="closer rise" style="--i:8">Knowledge was power.<br><span class="hl">Now power is what you build with it.</span></p>
+
+</section>
+</body></html>
